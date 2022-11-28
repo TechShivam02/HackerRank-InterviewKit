@@ -1,0 +1,73 @@
+
+bool isChar(char ch){
+    
+    int asci = ch;
+    
+    if( (asci >= 97 && asci <= 122 ) ||(asci >= 65 && asci <= 90 ) ){
+        return true;
+    }
+    
+    return false;
+    
+    
+}
+
+string caesarCipher(string str, int k) {
+    
+    int n = str.length();
+    
+    
+    for(int i=0;i<n;i++){
+        
+        
+        if( isChar(str[i]) ){
+            
+            int ascii = str[i]+k;
+           
+            
+            
+            
+            if(isupper(str[i]) && ascii > 90 ){
+               
+               
+                
+                ascii = (ascii-65) % 26;  // 1 2 3 4
+                ascii = 65 + ascii;
+                
+                str[i]= char(ascii);
+                
+            }
+            
+            else if(islower(str[i]) && ascii > 122 ){
+                  
+                 
+                
+                
+                  ascii = (ascii-97) % 26;  //  1 2 3 4
+                 
+                  ascii = 97 + ascii;
+                  
+                 str[i]= char(ascii);
+            }
+            
+            
+            
+            
+            
+            else {
+                
+                str[i]= char(ascii);
+                
+             }
+            
+            
+        }  // if the current char is alphabet
+        
+    }
+    
+    
+        
+    return str;
+    
+    
+}

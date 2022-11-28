@@ -1,0 +1,31 @@
+
+int minimumAbsoluteDifference(vector<int> arr) {
+        
+        
+        sort(arr.begin() , arr.end());
+        
+        
+        int mini = INT_MAX;
+        int n=arr.size();
+        
+        
+        for(int i=0;i<n-1;i++){
+            int a = arr[i];
+            int b=arr[i+1];
+            
+            
+                int ans = abs(a-b);
+                
+                if(ans < mini){
+                    mini = ans;
+                }
+                
+            
+        }
+        
+        return  mini;
+        
+        
+        
+        
+}
